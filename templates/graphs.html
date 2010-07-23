@@ -1,0 +1,13 @@
+	<div class="grapher" style="opacity:0.0;">
+
+
+		<div class="g_top"></div> <!-- end g_top !-->	
+		<div class="g_middle">
+		
+			{% for graph in graphs %}
+					 <!-- {{ graph }} !-->
+   				 	<script type="text/javascript">createGraph({{forloop.counter0}},"{{graph}}")</script>
+			{% endfor %} 		
+		</div> <!-- end g_middle !-->
+		<div class="g_bottom"></div> <!-- end g_middle !-->
+	</div>

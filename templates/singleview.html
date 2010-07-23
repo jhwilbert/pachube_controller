@@ -1,0 +1,69 @@
+{% for values in datastream.values %}
+							<div class="d_datastream" id="control_{{datastream.id}}">
+							
+							<!-- <a href="/delete/{{ datastream.id}}"><div class="delete_button" style="display:none;"></div></a> temporary disabled before pachube bugfix !-->
+							{% ifequal values.max_value '1.0' %}     
+								<div class="d_digital">
+									<div class="d_digital_title">
+										{% if datastream.tags %}	
+											{% for tag in datastream.tags %}
+												{{ tag }}
+											{% endfor %}
+										{% else %}
+											  datastream {{datastream.id}}
+										{% endif %}
+									</div> <!-- end d_digital_title !-->
+									{% if values.value %}
+									<div id="digitalValue{{datastream.id}}" class="value">{{ values.value }}</div>	
+									<div class="d_digital_knob_container">
+										{% ifequal values.value '1' %}
+												<div id="switchLight{{datastream.id}}" class="light_on"></div>										
+											{% if user %}
+												<a href="#" onClick="updateDigital({{datastream.id}},0)"><div id="switchButton{{datastream.id}}" class="buttonON"></div></a>
+											{% else %}
+												<div id="switchButton{{datastream.id}}" class="buttonON_d"></div>
+											{% endif %}	
+										{% else %}
+												<div id="switchLight{{datastream.id}}" class="light_off"></div>										
+											{% if user %}
+												<a href="#" onClick="updateDigital({{datastream.id}},1)"><div id="switchButton{{datastream.id}}" class="buttonOFF"></div></a>
+											{% else %}
+											    <div id="switchButton{{datastream.id}}" class="buttonOFF_d"></div>
+											{% endif %}	
+											
+											{% endifequal %}
+									{% endif %}	
+									
+									
+									</div> <!-- end d_analog_knob_container !-->
+								</div> <!-- end d_digital !-->
+							{% else %}
+								<div class="d_analog">
+									<div class="d_analog_title">
+										{% if datastream.tags %}	
+											{% for tag in datastream.tags %}
+												{{ tag }}
+												{% endfor %}
+										{% else %}
+											datastream {{datastream.id}}
+										{% endif %}	
+									</div> <!-- end d_analog_title !-->
+									{% if values.value %}
+									<div class="min_max"><div class="min_value">min. {{ values.min_value }}</div>	<div class="max_value">max.{{ values.max_value }}</div>	</div>	
+									<div class="d_analog_knob_container">
+										
+										 <input type='text' id="wheel{{datastream.id}}" value="{{ values.value }}" />
+										 {% if user %}
+										 <script type="text/javascript"> createKnob({{datastream.id}},{{values.min_value}},{{values.max_value}},{{values.value}},false) </script> 
+										 {% else %}
+										  <script type="text/javascript"> createKnob({{datastream.id}},{{values.min_value}},{{values.max_value}},{{values.value}},true) </script> 
+										 {% endif %}
+									</div> <!-- end d_analog_knob_container !-->
+									{% else %}
+									 <div class="error">Enter a minimum or maximum value for your switch (form max, form min)</div>
+									{% endif %}	
+									
+								</div> <!-- end d_analog !-->
+							{% endifequal %}
+							</div> <!-- end d_datastream !-->
+{% endfor %}      

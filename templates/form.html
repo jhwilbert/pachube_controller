@@ -1,0 +1,61 @@
+				<div class="header_create">
+					<div id="header_title">Add Control</div>
+				</div>
+			<div id="form_create">
+
+					<!-- {{ newDatastream }} !-->
+					
+					<div class="caption-form">Select datastream type:</div>
+					
+					<div class="form1">
+						<form action="">
+							<select class="select_type" name="types" onchange='javascript:toggleForms(this.value)'>
+							<option value="type">switch type</option>
+							<option value="digital">digital</option>
+							<option value="analog">analog</option>
+							</select>															
+						</form>
+					</div>
+
+					<div class="form_analog" style="display:none;">
+						<form id="enter-word-form" action="/formHandle" method="POST" onSubmit="return validate()">
+							<div class="caption-form">Enter datastream tag:</div>
+							<div class="field-form "><input value="myHeaterPower"  size=17 maxlength=20 type="text" name="tag" /></div>
+							<input type="hidden" value="{{ newDatastream }}" name="datastream" >					
+							<div class="caption-form"></div>
+							<div class="field-form caption-form">
+							Set initial values:<Br>
+								<input value="0" size=5 type="text" name="minValue" />	
+								<input value="100" size=5 type="text" name="maxValue" />
+								<input value="50" size=5 type="text" name="value" />
+							</div>
+							
+							<div class="caption-form">min. value | max. value | current value </div><Br>
+							<input type="submit" value="create" class="button-create"> 	
+						</form> <!-- end form analog !-->
+						
+					</div>					
+					<div class="form_digital" style="display:none;">
+						<form id="enter-word-form" action="/formHandle" method="POST" onSubmit="return validate()">
+							<div class="caption-form">Enter datastream tag:</div>
+							<div class="field-form "><input value="myLightSwitch"  size=17 maxlength=20 type="text" name="tag" /></div>
+							<input type="hidden" value="{{ newDatastream }}" name="datastream" >					
+							<div class="caption-form"></div>
+							<div class="field-form caption-form">
+							Set initial values:<Br>
+								<input value="0" size=5 type="text" name="minValue" />	
+								<input value="1" size=5 type="text" name="maxValue" />
+								<input value="1" size=5 type="text" name="value" />
+							</div>
+							
+							<div class="caption-form">min. value | max. value | current value </div><Br>
+							<input type="submit" value="create" class="button-create"> 	
+						</form> <!-- end form digital !-->
+						
+					</div>	
+
+
+					
+					<div class="msg"></div>
+
+			</div>

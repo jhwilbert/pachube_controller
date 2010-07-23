@@ -1,0 +1,82 @@
+	<div class="dashboard">
+		<div class="d_top"> 
+			<div class="d_top_content_title d_title"> 
+				{% if objects.title  %} 
+					{{ objects.title }}<br>
+				{% else %}
+					error retrieving title <br>
+				{% endif %}
+				
+
+			</div> <!-- end d_top_content !-->	
+			{% if user %}
+			 	{% ifequal user 'enabled' %}
+			 	
+			 	{% else %}
+					<a href="/logout"><div class="logout"></div></a>
+				{% endifequal %}
+			{% else %}
+				{% ifequal owns_feed 1 %}
+				<a href="#" onClick='displayLogin()'><div class="login"></div></a> 
+				{% endifequal %}	
+			{% endif %}					
+			<div class="d_top_content_info d_info"> 
+				
+					<div class="graph_button"></div>
+					{% if user %}
+						{% ifequal user 'enabled' %}
+						{% else %}
+							<a href="#" onClick='displayButtons()'><div class="edit_feed"></div></a> 
+						{% endifequal %}											
+					{% else %}
+					
+					{% endif %}
+					
+				<span class="caption">feed id:</span><br>
+				{% if objects.id %} 
+					{{ objects.id }}<br>
+				{% else %}
+					error retrieving feed id <br>
+				{% endif %}
+				<span class="caption">updated at:</span><br>
+				{% if objects.updated %}
+					{{ objects.updated }}
+				{% else %}
+					<span>never</span>
+				{% endif %}
+				
+			</div> <!-- end d_top_info !-->
+			
+		</div> <!-- end d_top !-->
+		
+		<div class="d_middle">		
+			<div class="d_middle_content">
+
+			{% for datastream in objects.datastreams %}
+				{% for values in datastream.values %}
+					{% include "singleview.html" %}
+				{% endfor %}      
+			{% endfor %}
+		
+			
+			<div class="header-buttons">
+				<a href="#" onClick='displayForm({{ initialDatastreams }})'><div class="add_control" style="display:none;"></div></a> 
+			</div>
+			
+			<div id="add_form"></div>
+			<div id="login_form"></div>			
+
+		</div> <!-- end d_middle_content !-->
+		<!--	<div class="console">
+				<div class="console_text">
+					Status Code:{{status_code}}
+				</div>
+				
+			</div>
+		!-->	
+		</div> <!-- end d_middle !-->
+
+		<div class="d_bottom">
+		
+		</div><!-- end d_bottom !-->
+	</div> <!-- end of dashboard !-->

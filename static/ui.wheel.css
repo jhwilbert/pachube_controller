@@ -1,0 +1,97 @@
+/*
+ * WHEEL
+ */
+.ui-wheel {
+
+	overflow: hidden;
+	background-position: 50% 0 !important;	
+}
+.ui-wheel.ui-wheel-with-background {
+	background: transparent none !important;
+	border: 0px;
+}
+.ui-wheel, .ui-wheel .ui-wheel-background {
+/*	background:white;
+*/
+	border:0px;
+	
+	width: 100px;
+	height: 100px;
+}
+.ui-wheel .ui-wheel-wrapper {
+	position: relative;
+}
+.ui-wheel .ui-wheel-background {
+
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 0;
+}
+.ui-wheel .ui-wheel-text {
+	display: block;
+	border: 0px;
+	font-size:11px;
+	color:white;
+	font-weight:bold;
+	font-family:Arial;
+	position: absolute;
+	left: 30px;
+	top: 40px;
+	padding:0px;
+	width: 40px;
+	z-index: 1;
+	height:15px;
+	background-image:url("images/bg-knob-text.png");
+	text-align: center;
+	vertical-align: middle;
+	white-space: normal;
+	cursor: text;
+
+}
+.ui-wheel .ui-wheel-text.ui-helper-hidden {
+	display: none !important;
+}
+.ui-wheel.ui-state-disabled .ui-wheel-text {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+.ui-wheel.ui-wheel-changing .ui-wheel-text {
+	cursor: default;
+}
+.ui-wheel input {
+	display: none;
+}
+.ui-wheel.ui-wheel-editing .ui-wheel-text {
+	display: none;
+}
+.ui-wheel.ui-wheel-editing input {
+	display: block;
+	position: absolute;
+	left: 20px;
+	top: 40px;
+	width: 60px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	z-index: 2;
+	text-align: center;
+}
+.ui-wheel .ui-wheel-knob {
+
+	display: block;
+	position: absolute;
+	z-index: 5;
+	cursor: move;
+}
+.ui-wheel .ui-wheel-knob.ui-state-hover,
+.ui-wheel .ui-wheel-knob.ui-state-active {
+	background-color: transparent;
+	border: 0 none;
+}
+.ui-wheel.ui-state-disabled .ui-wheel-knob,
+.ui-wheel .ui-wheel-knob.ui-state-disabled {
+	cursor: default;
+	opacity: 1.0; filter: Alpha(opacity=100);
+}

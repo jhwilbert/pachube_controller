@@ -1,0 +1,25 @@
+	<script>		
+	$('#login-form').submit(function() {
+		$.post('/login',{ passphrase: $("#passphrase").val() } , function(data) {
+		  if(data == 'wrong password'){
+		  $('#form_response').html(data);
+		} else {
+			location.reload();
+		}
+		});
+		return false
+	});
+	</script>
+	<div class="header_create">
+		<div id="header_title">Login</div>
+	</div>
+	<div id="form_create">
+		<form id="login-form" action="/login" method="POST">
+		<input id="passphrase" value=""  size=17 maxlength=10 type="password" name="passphrase" />
+		<input type="submit" value="login" class="button-create"> 	
+		</form>
+					
+		<div id="form_response"></div>		
+	</div>
+			
+		

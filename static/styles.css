@@ -1,0 +1,435 @@
+/* dashboard background structure */
+
+.dashboard {
+	font-family: Arial;
+	font-size: 12px;
+	position:absolute;
+	left:10px; /* edit this value to position horizontally */
+	top:10px; /* edit this value to position vertically */
+	width:299px;
+}
+.d_top {
+	float:left;
+	background-image:url("images/bg-top.png");
+	width:299px;
+	height:121px;
+	background-repeat:no-repeat;
+}
+
+
+.d_middle {
+	float:left;
+	background-image:url("images/bg-middle.png");
+	background-repeat:repeat-y;
+	width:299px;
+}
+
+.d_bottom {
+	float:left;
+	background-image:url("images/bg-bottom.png");
+	width:299px;
+	height:30px;
+	background-repeat:no-repeat;
+}
+
+/* graph background structure */
+
+.grapher {
+	position:absolute;
+	z-index:-1;
+	font-family: Arial;
+	font-size: 12px;
+	float:left;
+	width:272px;
+}
+.g_top {
+	float:left;
+	background-image:url("images/bg-grapher-top.png");
+	width:272px;
+	height:18px;
+	background-repeat:no-repeat;
+}
+
+.g_middle {
+	float:left;
+	background-image:url("images/bg-grapher-middle.png");
+	background-repeat:repeat-y;
+	width:272px;
+}
+
+.g_bottom {
+	float:left;
+	background-image:url("images/bg-grapher-bottom.png");
+	width:272px;
+	height:18px;
+	background-repeat:no-repeat;
+}
+
+
+/* dashboard content structure */
+
+.d_top_content_title {
+	float:left;
+	width:266px;
+	margin-left:15px;
+	margin-top:10px;
+	/* border: 1px solid black; */
+}
+
+.d_top_content_info {
+	float:left;
+	width:266px;
+	margin-left:15px;
+	margin-top:20px;
+	/* border: 1px solid black; */
+}
+.d_middle_content {
+	float:left;
+	width:249px;
+	margin-left:25px;
+	/* border: 1px solid black; */
+
+}
+
+.d_datastream {
+	background-image:url("images/bg-datastream.png");
+	float:left;
+	width:249px;
+	height:100px;
+	border-bottom:1px solid #d1d1d1;
+}
+
+/* dashboard typography */
+
+.caption {
+	color: #676767;
+	font-size:10px;
+	text-shadow: 0 0px 0 #e0e0e0;
+}
+.d_title {
+	font-weight:bold;
+	font-size:16px;
+	text-shadow: 0 1px 0 #e0e0e0;
+}
+
+.d_info {
+	font-weight:bold;
+	font-size:11px;
+	text-shadow: 0 1px 0 #e0e0e0;
+}
+
+/* analog datastream */
+
+.d_analog_title {
+	float:left;
+	width:130px;
+	color: #fd004c;
+	padding-top:38px;
+	padding-left:10px;
+	font-size:14px;
+	font-weight:bold;
+	text-shadow: 0 1px 0 white;
+	/* border: 1px solid black; */
+}
+
+.d_analog_knob_container {
+	float:right;
+	width:100px;
+	height:100px;
+	margin-top:10px;
+	/* border: 1px solid black; */
+}
+
+.max_value {
+	float:right;
+}
+
+.min_value {
+	float:left;
+}
+
+.min_max {
+	margin-left:8px;
+	margin-top:70px;
+	width:90px;
+	position:absolute;
+	color: #676767;
+	font-size:10px;
+	text-shadow: 0 0px 0 #e0e0e0;
+
+}
+/* digital datastream */
+
+.d_digital_title {
+	float:left;
+	width:165px;
+	color: #fd004c;
+	padding-left:10px;
+	padding-top:38px;
+	font-size:14px;
+	font-weight:bold;
+	text-shadow: 0 1px 0 white;
+	/* border: 1px solid black; */
+}
+
+.d_digital_knob_container {
+	float:right;
+	margin-right:22px;
+	width:50px;
+	height:100px;
+	/* border: 1px solid black; */
+}
+
+.light_on {
+	background-image:url("images/light_on.png");	
+	width:26px;
+	height:25px;
+	background-repeat:no-repeat;
+	margin-left:8px;
+	margin-bottom:3px;
+	margin-top:3px;
+}
+
+.light_off{
+	background-image:url("images/light_off.png");	
+	width:26px;
+	height:25px;
+	background-repeat:no-repeat;
+	margin-left:8px;
+	margin-bottom:3px;
+	margin-top:3px;
+}
+
+.buttonON {
+	background-image:url("images/switch_on.png");
+	width:45px;
+	height:64px;
+	cursor:pointer;
+}
+
+.buttonOFF {
+	background-image:url("images/switch_off.png");
+	width:45px;
+	height:64px;
+	cursor:pointer;
+}
+
+.buttonON_d {
+	background-image:url("images/switch_on.png");
+	width:45px;
+	height:64px;
+
+}
+
+.buttonOFF_d {
+	background-image:url("images/switch_off.png");
+	width:45px;
+	height:64px;
+}
+
+.value {
+	display:none;
+}
+
+.knob_graphic {
+	float:right;
+}
+
+.graph_slider {
+	z-index:-1;
+	position:absolute;
+	left:0px;
+	height:105px;
+	background-image:url("images/bg_graph_slider.png");
+	width:338px;
+}
+
+/* interface buttons */
+
+.graph_button {
+	cursor:pointer;
+	margin-top:2px;
+	float:right;
+	background-image:url("images/btn-graph.png");
+	height:34px;
+	width:34px;
+}
+
+.graph_button:hover {
+	background-image:url("images/btn-graph-o.png");
+}
+
+/* forms */
+
+.header_create {
+	margin-top:10px;
+	background-image:url("images/header-create.png");
+	width:250px;
+	height:29px;
+	float:left;
+}
+
+#header_title {
+	font-weight:bold;
+	font-size:12px;
+	color:white;
+	padding-top:5px;
+	padding-left:5px;
+
+}
+#form_create {
+	float:left;
+	width:240px;
+	padding-left:10px;
+	background-color:#f1f1f1;
+	border-bottom:1px solid #d1d1d1;
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+.caption-form {
+    padding-top:5px;
+	font-size:11px;
+	color: #b1b1b1;
+}
+
+input {
+	color: black;
+	font-weight:bold;
+	background: white;
+	border: 1px solid #cccccc;
+	padding:3px;
+}
+
+.button-create {
+	font-family: Arial;
+	background-image:url("images/bg-create.png");
+	color: white;
+} 
+
+.select_type  {
+	font-family: helvetica, arial sans-serif;
+	height: 20px;
+	padding-top:3px;
+	background-color: #FFF;
+	border: 1px solid #e6e6e6;
+	color: #000;
+	width: 120px;
+	font-size:11px;
+	margin: 0px;
+}
+
+
+/* */
+#login-form {
+	padding-top:10px;
+}
+
+.header-buttons {
+	padding-top:5px;
+	padding-bottom:5px;
+	float:left;	
+}
+
+.delete_button {
+	position:absolute;
+	background-image:url("images/btn-delete.png");
+	width:102px;
+	height:21px;
+	cursor:pointer;
+	margin:5px;
+}
+
+.delete_button:hover {
+	position:absolute;
+	background-image:url("images/btn-delete-o.png");
+	width:102px;
+	height:21px;
+	cursor:pointer;
+	margin:5px;
+}
+
+.edit_feed {
+	float:right;
+	width:102px;
+	height:21px;
+	background-image:url("images/btn-editfeed.png");
+}
+
+.edit_feed:hover {
+	float:right;
+	cursor:pointer;
+	width:102px;
+	height:21px;
+	background-image:url("images/btn-editfeed-o.png");
+}
+
+.add_control {
+	float:left;
+	width:102px;
+	height:21px;
+	background-image:url("images/btn-addcontrol.png");
+}
+
+.add_control:hover {
+	float:left;
+	cursor:pointer;
+	width:102px;
+	height:21px;
+	background-image:url("images/btn-addcontrol-o.png");
+}
+
+/* login/logout */
+
+.login {
+	position:absolute;
+	top:15px;
+	left:238px;
+	background-image:url("images/btn-login.png");
+	width:47px;
+	height:17px;
+	cursor:pointer;
+}
+
+.login:hover {
+	background-image:url("images/btn-login-o.png");
+}
+
+.logout {
+	position:absolute;
+	top:15px;
+	left:238px;
+	background-image:url("images/btn-logout.png");
+	width:47px;
+	height:17px;
+	cursor:pointer;
+}
+
+.logout:hover {
+	background-image:url("images/btn-logout-o.png");
+}
+
+#form_response {
+	padding-top:5px;
+	font-size:11px;
+	font-weight:bold;
+	color:#ff0000;
+}
+
+.console {
+	font-size:11px;
+	font-weight:bold;
+	margin-top:10px;
+	margin-left:25px;
+	float:left;
+	width:250px;
+	height:60px;
+	background-image:url("images/bg-console.png");
+}
+.console_text {
+	padding-left:10px;
+}
+
+.error {
+	padding-top:20px;
+}
