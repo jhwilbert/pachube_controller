@@ -27,7 +27,7 @@
 #datastream max_value above 1 will be rendered as analog knobs. To control your datastreams
 #simply execute this code, click on the switches or rotate the knobs to update pachube.
 
-# João Wilbert / Connected Environments 2010
+# Joao Wilbert / Connected Environments 2010
 # *****************************************************************
 
 
